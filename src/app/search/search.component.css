@@ -1,4 +1,4 @@
-*::after,
+/* *::after,
 *::before {
   margin: 0;
   padding: 0;
@@ -55,7 +55,7 @@ body {
   border: 1px solid #ccc;
   border-top: none;
   /*so things don't jump around*/
-  position: absolute;
+ /* position: absolute;
   left: 25%;
   top: calc(50% + 25px);
   max-height: calc(50% - 15px);
@@ -121,4 +121,4 @@ body {
   #keyword-button {
     right: 3.5%
   }
-}
+} */
