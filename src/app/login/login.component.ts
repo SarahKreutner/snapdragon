@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm;
   user;
   password;
+  message;
   constructor(private http: HttpClient,  private formBuilder: FormBuilder,) {
     this.loginForm = this.formBuilder.group({
       user: '',
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
     
   }
  onSubmit() : void{
+   
    this.user=this.loginForm.get('user').value;
    this.password=this.loginForm.get('password').value;
    if (this.user==''||this.password=='') {
@@ -36,7 +38,8 @@ export class LoginComponent implements OnInit {
    else {
      console.log("Logging in");
       this.http.post('http://localhost:8000/Login', {user: {username: this.user, password: this.password}}).subscribe(data => {
-      console.log(data);
+      console.log(data); console.warn(data["message"]);
+      this.message = data["message"];
     });
   
    }
