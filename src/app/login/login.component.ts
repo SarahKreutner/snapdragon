@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   user;
   password;
   message;
+  nextPage;
   constructor(private http: HttpClient,  private formBuilder: FormBuilder,) {
     this.loginForm = this.formBuilder.group({
       user: '',
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
      console.log("Logging in");
       this.http.post('http://localhost:8000/Login', {user: {username: this.user, password: this.password}}).subscribe(data => {
       console.log(data); console.warn(data["message"]);
-      this.message = data["message"];
+      this.message = data["message"]; this.nextPage="[/home]";
     });
   
    }
