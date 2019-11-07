@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,14 @@ export class LoginComponent implements OnInit {
  public items: Array<string>;
   title = 'app';
   results = '';
-  constructor(private http: HttpClient) {
-    
+  loginForm;
+  users;
+  password;
+  constructor(private http: HttpClient,  private formBuilder: FormBuilder,) {
+    this.loginForm = this.formBuilder.group({
+      name: '',
+      address: ''
+    });
   }
 
   public open(event, item) {
