@@ -17,7 +17,8 @@ export class SearchComponent implements OnInit {
   searchForm;
   constructor(private http: HttpClient,  private formBuilder: FormBuilder,) { 
     this.searchForm = this.formBuilder.group({
-      searchQuery: ''
+      searchQuery: '',
+      searchField: ''
       })
 
   }
