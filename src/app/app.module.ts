@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './search/api.service';
-
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { plantListComponent } from './plant-list/plant-list.component';
@@ -18,6 +17,7 @@ import { SearchService } from './search.service';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
 
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -27,6 +27,7 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'home', component: plantListComponent },
+      { path: 'search', component: SearchComponent },
        { path: 'plants/:plantId', component: plantDetailsComponent },
        { path: 'cart', component: CartComponent },
        { path: 'shipping', component: ShippingComponent },

@@ -10,7 +10,7 @@ import 'rxjs/add/operator/switchMap';
   template: `
   <section class="filter-wrapper">
  <div class="keyword-wrapper">
-<input [formControl]="queryField" type="text" id="keyword" placeholder="search for artists..." autofocus/>
+<input [formControl]="queryField" type="text" id="keyword" placeholder="search for plants..." autofocus/>
   </div>
 <ul class="filter-select">
   <li *ngFor="let result of results" class="filter-select-list"><img src="{{result.images['2']?.url}}" alt="" width="50" height="50"><p class="artist-name">
