@@ -28,7 +28,9 @@ export class SearchComponent implements OnInit {
 
   }
   onSubmit() : void{
+   
     console.log("Searching");
+    console.log(this.searchForm.get('searchField').value);
     this.searchQuery = this.searchForm.get('searchField').value;
     this.http.post("http://localhost:8000/Plants/Database", {plant:{formal_name:this.searchQuery,}}).subscribe( data => {console.log(data["plants"]); this.results = data["plants"];});
     
