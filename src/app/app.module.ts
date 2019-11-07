@@ -25,7 +25,8 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: plantListComponent },
+      { path: '', component: LoginComponent },
+      { path: 'home', component: plantListComponent },
        { path: 'plants/:plantId', component: plantDetailsComponent },
        { path: 'cart', component: CartComponent },
        { path: 'shipping', component: ShippingComponent },
