@@ -1,6 +1,6 @@
 <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
   <br>
-<input [formControl]="searchField" type="text" id="keyword" placeholder="Search for plants..." autofocus/>
+<input [formControl]="searchField" type="text" id="searchField" placeholder="Search for plants..." autofocus/>
 
 <div *ngFor="let plant of results; index as plantId">
    <h3>
