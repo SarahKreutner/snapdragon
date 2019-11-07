@@ -1,5 +1,8 @@
-<section class="filter-wrapper">
+
+<input [formControl]="queryField" type="text" id="keyword" placeholder="search for plants..." autofocus/>
+<!-- <section class="filter-wrapper">
  <div class="keyword-wrapper">
+   <br>
 <input [formControl]="queryField" type="text" id="keyword" placeholder="search for plants..." autofocus/>
   </div>
 <ul class="filter-select">
@@ -7,4 +10,4 @@
     {{result.name}}</p>
 <span class="tags" *ngFor='let genre of result?.genres | slice:0:6'>{{genre}}</span>
 </ul>
-</section>
+</section> -->
