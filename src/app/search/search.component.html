@@ -1,7 +1,7 @@
 <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
   <br>
 <input [formControl]="searchField" type="text" id="searchField" placeholder="Search for plants..." autofocus/>
-
+</form>
 <!-- <div *ngFor="let plant of results; index as plantId">
    <h3>
       <a [title]="plant.given_name + ' description'" [routerLink]="['/plants', plant_id]">
@@ -15,7 +15,7 @@
     In your list
   </p>
 </div>
-</form> -->
+ -->
 
 <!-- <section class="filter-wrapper">
  <div class="keyword-wrapper">

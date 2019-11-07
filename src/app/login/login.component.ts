@@ -8,7 +8,6 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
- public items: Array<string>;
   title = 'app';
   results = '';
   loginForm;
@@ -23,9 +22,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public open(event, item) {
-    alert('Open ' + item);
-  }
   ngOnInit() {
     
   }
