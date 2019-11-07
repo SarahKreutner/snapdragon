@@ -1,9 +1,10 @@
-
+<form [formGroup]="loginForm">
 <h2>Login</h2>
 <input type="text" id="keyword" placeholder="Username" autofocus>
 <br>
 <input type="text" id="keyword" placeholder="Password" autofocus>
 
-<input type="button" (click)="myFunc()" value="Click Me" autofocus>
+<button type="submit" (ngSubmit)="onSubmit(loginForm.value)">Submit</button>
 
 <p>Correct Login</p>
+</form>

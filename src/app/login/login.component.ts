@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
   password;
   constructor(private http: HttpClient,  private formBuilder: FormBuilder,) {
     this.loginForm = this.formBuilder.group({
-      name: '',
-      address: ''
+      user: '',
+      password: ''
     });
   }
 
@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     
   }
-  myFunc() : void{
+ onSubmit() : void{
+   
    this.http.get('https://api.github.com/users/seeschweiler').subscribe(data => {
       console.log(data);
     });
