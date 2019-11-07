@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
      console.warn("Enter a username and password")
    }
    else {
+     console.log("Logging in");
       this.http.post('http://localhost:8000/Login', {user: {username: this.user, password: this.password}}).subscribe(data => {
       console.log(data);
     });
