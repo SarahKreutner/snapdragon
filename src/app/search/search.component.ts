@@ -13,17 +13,18 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
-  results: any[] = [];
-  searchField: FormControl = new FormControl();
+  searchQuery;
+  results: '';
+  searchForm: FormControl = new FormControl();
   constructor(private _apiService: ApiService, private http: HttpClient,  private formBuilder: FormBuilder,) { }
 
   ngOnInit() {
-    // this.searchField.valueChanges
-    // .debounceTime(200)
-    // .distinctUntilChanged()
-    // .switchMap((query) =>  this.http.get("http://localhost:8000/Plants").subscribe( data => {this.results = result.json().data.items;}));
-    
+   
 
+  }
+  onSubmit() : void{
+    this.searchQuery = this.searchForm.get('searchField').value;
+    this.http.post("http://localhost:8000/Plants", {plant:{formal_name:this.searchQuery,}}).subscribe( data => {console.log(data["plants"]);this.results = data["plants"];});
+    
   }
 }
