@@ -1,5 +1,22 @@
+<form [formGroup]="searchForm" [formGroup]="loginForm" (ngSubmit)="onSubmit(searchForm.value)">
+  <br>
+<input [formControl]="searchField" type="text" id="keyword" placeholder="search for plants..." autofocus/>
 
-<input [formControl]="queryField" type="text" id="keyword" placeholder="search for plants..." autofocus/>
+<div *ngFor="let plant of results; index as plantId">
+   <h3>
+      <a [title]="plant.given_name + ' description'" [routerLink]="['/plants', plant_id]">
+      {{ plant.name }}
+    </a>
+  </h3>
+   <p *ngIf="plant.description">
+    Description: {{ plant.description }}
+  </p>
+  <!-- <p *ngIf="plant.inList == 'true'">
+    In your list
+  </p> -->
+</div>
+</form>
+
 <!-- <section class="filter-wrapper">
  <div class="keyword-wrapper">
    <br>
