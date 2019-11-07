@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   title = 'app';
   results = '';
   loginForm;
-  users;
+  user;
   password;
   constructor(private http: HttpClient,  private formBuilder: FormBuilder,) {
     this.loginForm = this.formBuilder.group({
@@ -28,11 +28,18 @@ export class LoginComponent implements OnInit {
     
   }
  onSubmit() : void{
-   
-   this.http.get('https://api.github.com/users/seeschweiler').subscribe(data => {
+   this.user=this.loginForm.get('user').value;
+   this.password=this.loginForm.get('password').value;
+   if (this.user==''||this.password=='') {
+     console.warn("Enter a username and password")
+   }
+   else {
+      this.http.post('http://localhost:8000/Login', {user: {username: this.user, password: this.password}}).subscribe(data => {
       console.log(data);
     });
   
+   }
+   
   }
 
 }
