@@ -13,30 +13,3 @@
   (notify)="onNotify()"></app-plant-alerts> -->
 
 </div>
-
-<!-- <div *ngFor="let plant of results; index as plantId">
-   <h3>
-      <a [title]="plant.given_name + ' description'" [routerLink]="['/plants', plant_id]">
-      {{ plant.name }}
-    </a>
-  </h3>
-   <p *ngIf="plant.description">
-    Description: {{ plant.description }}
-  </p>
-  <p *ngIf="plant.inList == 'true'">
-    In your list
-  </p>
-</div>
- -->
-
-<!-- <section class="filter-wrapper">
- <div class="keyword-wrapper">
-   <br>
-<input [formControl]="queryField" type="text" id="keyword" placeholder="search for plants..." autofocus/>
-  </div>
-<ul class="filter-select">
-  <li *ngFor="let result of results" class="filter-select-list"><img src="{{result.images['2']?.url}}" alt="" width="50" height="50"><p class="artist-name">
-    {{result.name}}</p>
-<span class="tags" *ngFor='let genre of result?.genres | slice:0:6'>{{genre}}</span>
-</ul>
-</section> -->
