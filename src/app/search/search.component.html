@@ -3,7 +3,7 @@
 <input formControlName="searchField" type="text" id="searchField" placeholder="Search for plants..." autofocus/>
 </form>
 <div *ngFor="let data of results; index as formal_name">
-<p> {{data.formal_name | titlecase}}</p>
+
 <a [title]="data.formal_name + ' details'" [routerLink]="['/plants', data.formal_name]">
       {{ data.formal_name | titlecase}}
     </a>
