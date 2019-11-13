@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
+import {database, user} from "../constants";
 // import 'rxjs/add/operator/debounceTime';
 // import 'rxjs/add/operator/distinctUntilChanged';
 // import 'rxjs/add/operator/switchMap';
@@ -32,7 +33,7 @@ export class SearchComponent implements OnInit {
     console.log("Searching");
     console.log(this.searchForm.get('searchField').value);
     this.searchQuery = this.searchForm.get('searchField').value;
-    this.http.post("http://localhost:8000/Plants/Database", {plant:{formal_name:this.searchQuery,}}).subscribe( data => {console.log(data["data"]); this.results = data["data"];});
+    this.http.post(database + "/Plants/Database", {plant:{formal_name:this.searchQuery,}}).subscribe( data => {console.log(data["data"]); this.results = data["data"];});
 
     
   }
