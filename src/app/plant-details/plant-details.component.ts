@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import {Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { plants } from "../plants";
 import { CartService } from '../cart.service';
+import { HttpClient } from '@angular/common/http';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: "app-plant-details",
@@ -10,8 +12,9 @@ import { CartService } from '../cart.service';
 })
 export class plantDetailsComponent implements OnInit {
    plant;
+   id;
 
-  constructor(
+  constructor(private http: HttpClient,
     private route: ActivatedRoute,private cartService: CartService
   ){}
 
@@ -22,7 +25,8 @@ export class plantDetailsComponent implements OnInit {
 
   ngOnInit() {
   this.route.paramMap.subscribe(params => {
-    this.plant = plants[+params.get('plantId')];
+    this.id = plants[+params.get('plantId')];
   });
+    this.http.post("http://localhost:8000/Plants/Database", {plant:{formal_name:this.id,}}).subscribe( data => {console.log(data["data"]); this.plant = data["data"];});
 }
 }
