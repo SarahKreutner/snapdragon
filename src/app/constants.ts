@@ -1,2 +1,2 @@
-export const database = "http://localhost:8000";
+export const database = "https://snapdragon11.herokuapp.com";
 export const user = "empty";
