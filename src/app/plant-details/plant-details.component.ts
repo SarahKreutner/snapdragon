@@ -25,7 +25,7 @@ export class plantDetailsComponent implements OnInit {
 
   ngOnInit() {
   this.route.paramMap.subscribe(params => {
-    this.id = plants[+params.get('plantId')];
+    this.id = params.get('plantId');
   });
     this.http.post("http://localhost:8000/Plants/Database", {plant:{formal_name:this.id,}}).subscribe( data => {console.log(data["data"]); this.plant = data["data"];});
 }
