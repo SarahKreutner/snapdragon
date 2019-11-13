@@ -3,6 +3,10 @@
 <input formControlName="searchField" type="text" id="searchField" placeholder="Search for plants..." autofocus/>
 </form>
 <p>{{results}}</p>
+<div *ngFor="let result of results">
+<p> {{result.formal_name}}</p>
+
+</div>
 
 <!-- <div *ngFor="let plant of results; index as plantId">
    <h3>

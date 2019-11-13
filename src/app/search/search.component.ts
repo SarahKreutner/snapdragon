@@ -13,7 +13,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
   searchQuery;
-  results: '';
+  results: "";
   searchForm;
   constructor(private http: HttpClient,  private formBuilder: FormBuilder,) { 
     this.searchForm = this.formBuilder.group({
@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit {
     console.log("Searching");
     console.log(this.searchForm.get('searchField').value);
     this.searchQuery = this.searchForm.get('searchField').value;
-    this.http.post("http://localhost:8000/Plants/Database", {plant:{formal_name:this.searchQuery,}}).subscribe( data => {console.log(data["data"]); this.results = data["data"];});
+    this.http.post("http://localhost:8000/Plants/Database", {plant:{formal_name:this.searchQuery,}}).subscribe( data => {console.log(data["data"]); this.results = JSON.parse(data["data"]);});
 
     
   }
