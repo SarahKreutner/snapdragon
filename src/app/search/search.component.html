@@ -2,9 +2,12 @@
   <br>
 <input formControlName="searchField" type="text" id="searchField" placeholder="Search for plants..." autofocus/>
 </form>
-<p>{{results}}</p>
 <div *ngFor="let data of results; index as formal_name">
-<p> {{data.formal_name}}</p>
+<p> {{data.formal_name | titlecase}}</p>
+<p>{{data.overview}}</p>
+<app-plant-alerts
+  [plant]="plant"
+  (notify)="onNotify()"></app-plant-alerts>
 
 </div>
 
