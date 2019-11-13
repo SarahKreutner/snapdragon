@@ -4,6 +4,7 @@ import { plants } from "../plants";
 import { CartService } from '../cart.service';
 import { HttpClient } from '@angular/common/http';
 import { switchMap } from 'rxjs/operators';
+import {database, user} from "../constants";
 
 @Component({
   selector: "app-plant-details",
