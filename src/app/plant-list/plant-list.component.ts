@@ -1,7 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import { CartService } from '../cart.service';
-
-import { plants } from '../plants';
+import {database, user} from "../constants";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-plant-list',
@@ -9,9 +9,8 @@ import { plants } from '../plants';
   styleUrls: ['./plant-list.component.css']
 })
 export class plantListComponent implements OnInit{
-  plants = plants;
-  items;
-   constructor(private cartService: CartService) { }
+  plants;
+   constructor(private http: HttpClient, private cartService: CartService) { }
 
   share() {
     window.alert('The plant has been shared!');
@@ -22,7 +21,9 @@ export class plantListComponent implements OnInit{
   }
   
   ngOnInit() {
-    this.items = this.cartService.getItems();
+    console.log("Loading plants");
+    this.http.post(database + "/Users/Plants", {user:{user_id:17,}}).subscribe( data => {console.log(data["data"]); this.plants = data["data"];});
+    
   }
 }
 

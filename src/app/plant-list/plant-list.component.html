@@ -2,7 +2,19 @@
 <button [routerLink]="['/search']"> <h2 style="color:white"> Search Plants </h2> </button>
 <h2>My Garden</h2>
 
-<div *ngFor="let plant of plants; index as plantId">
+<div *ngFor="let data of plants; index as given_name">
+
+<a [title]="data.given_name + ' details'" [routerLink]="['/plants', data.given_name]">
+      {{ data.given_name | titlecase}}
+    </a>
+<p>{{data.description}}</p>
+<app-plant-alerts
+  [plant]="plant"
+  (notify)="onNotify()"></app-plant-alerts>
+
+</div>
+
+<!-- <div *ngFor="let plant of plants; index as plantId">
    <h3>
       <a [title]="plant.name + ' details'" [routerLink]="['/plants', plantId]">
       {{ plant.name }}
@@ -24,7 +36,7 @@
   (notify)="onNotify()">
 </app-plant-alerts>
 
-</div>
+</div> -->
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
