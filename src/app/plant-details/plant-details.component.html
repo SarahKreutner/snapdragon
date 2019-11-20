@@ -8,7 +8,7 @@
 
 	<button *ngIf="!showInput" (click)="add(plant)">Add a {{plant.formal_name |titlecase}}</button>
   <p> {{message}}</p>
-	<form *ngIf="showInput" [formGroup]="addPlantForm" (ngSubmit)="onSubmit(addPlantForm.value)">
+	<form *ngIf="showInput" [formGroup]="addPlantForm" (ngSubmit)="onSubmit()">
 		<h2>New {{plant.formal_name |titlecase}}</h2>
 		<input type="text" formControlName="plantName" placeholder="Plant Name">
 		<br>
