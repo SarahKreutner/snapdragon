@@ -1,9 +1,13 @@
 .plantWrapper {
  background-color: forestgreen;
- width: 80%;
+ width: 120%;
  max-width: 1000px;
  border-radius: 15px 50px;
- color: white;
+ 
+}
+.plantWrapper > p, .plantWrapper > h2 {
+  color: white !important;
+  padding-left: 30px;
 }
 
 /*
