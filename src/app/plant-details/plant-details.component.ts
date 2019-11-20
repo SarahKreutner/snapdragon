@@ -15,6 +15,7 @@ import { FormBuilder } from "@angular/forms";
 export class plantDetailsComponent implements OnInit {
   plant;
   id;
+  genericPlantId;
   plantName;
   plantDescription;
   notifications;
@@ -31,12 +32,11 @@ export class plantDetailsComponent implements OnInit {
       plantName: "",
       plantDescription: "",
       notifications: false,
-      location: "",
+      location: ""
     });
   }
 
   addToCart(plant) {
-    window.alert("Your plant has been added!");
     this.cartService.addToCart(plant);
   }
   add(plant) {
@@ -52,22 +52,34 @@ export class plantDetailsComponent implements OnInit {
       .subscribe(data => {
         console.log(data["data"]);
         this.plant = data["data"];
+        this.genericPlantId = data["data"][0]["generic_plant_id"];
       });
   }
-  onSubmit() : void{
-   
-   this.plantName=this.addPlantForm.get('plantName').value;
-   this.plantDescription=this.addPlantForm.get('plantDescription').value;
-   this.notifications=this.addPlantForm.get('notifications').value;
-   
-     console.log("Creating Plant");
-      this.http.post(database + '/Plants', {plant: {plant_id: this.plant, given_name: this.plantName, description: this.plantDescription, notifications: this.notifications, user_id: user, location: this.location}}).subscribe(data => {
-      console.log(data); 
-      console.log(data["message"]);
-     
+  onSubmit(): void {
+    this.plantName = this.addPlantForm.get("plantName").value;
+    this.plantDescription = this.addPlantForm.get("plantDescription").value;
+    this.notifications = this.addPlantForm.get("notifications").value;
+    this.location = this.addPlantForm.get("location").value;
+    console.log("Creating Plant");
+    this.http
+      .post(database + "/Plants", {
+        plant: {
+          generic_plant_id: this.genericPlantId,
+          given_name: this.plantName,
+          description: this.plantDescription,
+          notifications: this.notifications,
+          user_id: user,
+          location: this.location
+        }
+      })
+      .subscribe(data => {
+        console.log(this.genericPlantId);
+        console.log(this.plantName);
+        console.log(this.plantDescription);
+        console.log(this.notifications);
+        console.log(this.location);
+        console.log(data);
+        console.log(data["message"]);
       });
-     
-   
-   
   }
 }
