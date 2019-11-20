@@ -12,10 +12,6 @@ export class plantListComponent implements OnInit{
   plants;
    constructor(private http: HttpClient, private cartService: CartService) { }
 
-  share() {
-    window.alert('The plant has been shared!');
-  }
-
   onNotify() {
     window.alert('You will be notified when the plant goes on sale');
   }

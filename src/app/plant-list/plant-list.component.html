@@ -4,13 +4,14 @@
 
 <div *ngFor="let data of plants; index as given_name">
 
-<a [title]="data.given_name + ' details'" [routerLink]="['/plants', data.given_name]">
-      {{ data.given_name | titlecase}}
-    </a>
-<p>{{data.description}}</p>
-<app-plant-alerts
+     <h2> {{ data.given_name | titlecase}} </h2>
+     <p>{{data.description}}</p>
+     <p> Location: {{data.location}} </p>
+     <button *ngIf="plant_schedule_id == null">Add schedule</button>
+     <p *ngIf="plant_schedule_id != null"> Reminder Scheduled </p>
+<!-- <app-plant-alerts
   [plant]="plant"
-  (notify)="onNotify()"></app-plant-alerts>
+  (notify)="onNotify()"></app-plant-alerts> -->
 
 </div>
 
