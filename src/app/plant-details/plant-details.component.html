@@ -1,18 +1,26 @@
 <h2> {{plant.formal_name | titlecase}} </h2>
 
 <div *ngIf="plant">
-  <h3>{{ plant.formal_name }}</h3>
-  <p>{{ plant.description }}</p>
-  <button (click)="add(plant)">Add Plant</button>
-  <form [formGroup]="addPlantForm" (ngSubmit)="onSubmit(addPlantForm.value)">
-<h2>Add Plant</h2>
-<input type="text" formControlName="plantName" placeholder="Plant Name">
-<br>
-<input type="text" formControlName="plantDescription" placeholder="Description">
-<br>
-<label><input type="checkbox" formControlName="notifications" value="Receive notifications">Receive notifications</label>
-<br>
-<button type="submit">Submit</button>
-</form>
+	<h3>{{ plant.formal_name }}</h3>
+	<p>{{ plant.description }}</p>
+
+	<button *ngIf="!showInput" (click)="add(plant)">Add Plant</button>
+
+	<form *ngIf="showInput" [formGroup]="addPlantForm" (ngSubmit)="onSubmit(addPlantForm.value)">
+		<h2>Add Plant</h2>
+		<input type="text" formControlName="plantName" placeholder="Plant Name">
+		<br>
+		<input type="text" formControlName="plantDescription" placeholder="Description">
+		<br>
+    <label>Location <br><select formControlName="location">
+      <option value="sunroom">Sunroom</option>
+      <option value="kitchen">Kitchen</option>
+      <option value="bedroom">Bedroom</option>
+      <option value="bathroom">Bathroom</option>
+    </select></label>
+		<label><input type="checkbox" formControlName="notifications" value="Receive notifications">Receive notifications</label>
+		<br>
+		<button type="submit">Submit</button>
+	</form>
 
 </div>
