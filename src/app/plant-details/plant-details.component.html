@@ -3,6 +3,16 @@
 <div *ngIf="plant">
   <h3>{{ plant.formal_name }}</h3>
   <p>{{ plant.description }}</p>
-  <button (click)="addToCart(plant)">Add Plant</button>
+  <button (click)="add(plant)">Add Plant</button>
+  <form [formGroup]="addPlantForm" (ngSubmit)="onSubmit(addPlantForm.value)">
+<h2>Add Plant</h2>
+<input type="text" formControlName="plantName" placeholder="Plant Name">
+<br>
+<input type="text" formControlName="plantDescription" placeholder="Description">
+<br>
+<label><input type="checkbox" formControlName="notifications" value="Receive notifications">Receive notifications</label>
+<br>
+<button type="submit">Submit</button>
+</form>
 
 </div>
