@@ -3,7 +3,7 @@
 <h2>My Garden</h2>
 
 <div *ngFor="let data of plants; index as given_name">
-
+  <div class=plantWrapper>
      <h2> {{ data.given_name | titlecase}} </h2>
      <p>{{data.description}}</p>
      <p> Location: {{data.location}} </p>
@@ -12,7 +12,7 @@
 <!-- <app-plant-alerts
   [plant]="plant"
   (notify)="onNotify()"></app-plant-alerts> -->
-
+  </div>
 </div>
 
 <!-- <div *ngFor="let plant of plants; index as plantId">

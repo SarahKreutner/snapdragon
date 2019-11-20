@@ -1,4 +1,10 @@
-
+.plantWrapper {
+ background-color: forestgreen;
+ width: 80%;
+ max-width: 1000px;
+ border-radius: 15px 50px;
+ color: white;
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
