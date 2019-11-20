@@ -37,12 +37,18 @@ export class LoginComponent implements OnInit {
    else {
      console.log("Logging in");
       this.http.post(database + '/Login', {user: {username: this.user, password: this.password}}).subscribe(data => {
-      console.log(data); console.warn(data["message"]);
-      this.message = data["message"]; this.nextPage="[/home]"; this.authenticated = data["data"]["authenticated"]; this.userId=data["data"]["results"][0]["user_id"]; console.log(this.authenticated);});
-     if ( this.authenticated ) {
+      console.log(data); 
+      console.warn(data["message"]);
+      this.message = data["message"]; 
+      this.nextPage="[/home]"; 
+      this.authenticated = data["data"]["authenticated"]; 
+      this.userId=data["data"]["results"][0]["user_id"]; 
+      console.log(this.authenticated); console.log(this.userId);
+      if ( this.authenticated ) {
       setUser(this.userId);
-      console.log(user);
      }
+      });
+     
    }
    
   }
