@@ -1,2 +1,7 @@
+
 export const database = "https://snapdragon11.herokuapp.com";
-export const user = "empty";
+let user;
+function setUser(value) {
+  user = value;
+}
+export {user, setUser};
