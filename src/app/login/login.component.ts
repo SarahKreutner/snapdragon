@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
       this.message = data["message"]; 
       this.nextPage="[/home]"; 
       this.authenticated = data["data"]["authenticated"]; 
-      console.log(this.authenticated); console.log(this.userId);
       if ( this.authenticated ) {
         this.userId=data["data"]["results"][0]["user_id"];
       setUser(this.userId);
