@@ -22,6 +22,7 @@ export class plantDetailsComponent implements OnInit {
   showInput;
   addPlantForm;
   location;
+  message = "";
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
@@ -51,7 +52,7 @@ export class plantDetailsComponent implements OnInit {
       .post(database + "/Plants/Database", { plant: { formal_name: this.id } })
       .subscribe(data => {
         console.log(data["data"]);
-        this.plant = data["data"];
+        this.plant = data["data"][0];
         this.genericPlantId = data["data"][0]["generic_plant_id"];
       });
   }
@@ -79,7 +80,8 @@ export class plantDetailsComponent implements OnInit {
         console.log(this.notifications);
         console.log(this.location);
         console.log(data);
-        console.log(data["message"]);
+        this.message= this.plantName +": "+ data["message"];
       });
+      this.showInput=false;
   }
 }
