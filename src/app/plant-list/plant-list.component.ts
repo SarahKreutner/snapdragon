@@ -22,7 +22,7 @@ export class plantListComponent implements OnInit{
   
   ngOnInit() {
     console.log("Loading plants");
-    this.http.post(database + "/Users/Plants", {user:{user_id:17,}}).subscribe( data => {console.log(data["data"]); this.plants = data["data"];});
+    this.http.post(database + "/Users/Plants", {user:{user_id: user,}}).subscribe( data => {console.log(data["data"]); this.plants = data["data"];});
     
   }
 }
