@@ -1,5 +1,18 @@
 
+:root {
+    --color1: rgba(11, 57, 84, 1);
+    --color2: rgba(128, 155, 206, 1);
+    --color3: rgba(198, 235, 190, 1);
+    --color4: rgba(224, 255, 79, 1);
+    --color5: rgba(135, 214, 74, 1);
+}
 
+a > h1 {
+  color: rgba(224, 255, 79, 1)
+}
+app-top-bar {
+  background-color: rgba(128, 155, 206, 1) !important;
+}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
