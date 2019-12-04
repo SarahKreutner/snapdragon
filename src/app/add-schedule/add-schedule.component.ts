@@ -27,6 +27,7 @@ export class AddScheduleComponent implements OnInit {
     this.scheduleType=this.scheduleForm.get('scheduleType').value;
     this.day=this.scheduleForm.get('day').value;
     this.frequency=this.scheduleForm.get('frequency').value;
+    console.log(this.scheduleType, this.day, this.frequency)
   }
 
 }

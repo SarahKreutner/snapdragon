@@ -1,20 +1,20 @@
-
-<form *ngIf="true" [formGroup]="addPlantForm" (ngSubmit)="onSubmit()">
-		<input class="inline" type="radio" ng-model="reminderType" formControlName="reminderType" name="reminderType" value="Weekly"> Weekly <br>
-        <div ng-show="reminderType == 'Weekly'" class="btn-group">
-  <button class="round" value="Sunday">S</button>
-  <button class="round" value="Monday">M</button>
-  <button class="round" value="Tuesday">T</button>
-  <button class="round" value="Wednesday">W</button>
-  <button class="round" value="Thursday">T</button>
-  <button class="round" value="Friday">F</button>
-  <button class="round" value="Saturday">S</button>
-</div>
-    <input type="radio" formControlName="reminderType" name="reminderType" value="Repeated"> Repeating <br>
-       <label>Every 
+<form *ngIf="true" [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
+	<input class="inline" type="radio" ng-model="reminderType" formControlName="reminderType" name="reminderType" value="Weekly"> Weekly
+	<br>
+	<div ng-show="reminderType == 'Weekly'" class="btn-group">
+		<input formControlName="day" name="day" type="radio" class="round" value="Sunday">Sunday
+		<input type="radio" class="round" formControlName="day" name="day" type="radio" value="Monday">Monday
+		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Tuesday">Tuesday
+		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Wednesday">Wednesday
+		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Thursday">Thursday
+		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Friday">Friday
+		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Saturday">Saturday
+	</div>
+		<input type="radio" formControlName="reminderType" name="reminderType" value="Repeated"> Repeating <br>
+		<label>Every 
 		<input type="text"  formControlName="numberDays" placeholder="number">
      days
   </label>
 
 		<button type="submit">Schedule reminder</button>
-	</form>
+</form>
