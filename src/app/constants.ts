@@ -4,4 +4,5 @@ let user;
 function setUser(value) {
   user = value;
 }
+
 export {user, setUser};

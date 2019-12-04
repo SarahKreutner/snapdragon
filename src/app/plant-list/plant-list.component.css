@@ -1,15 +1,18 @@
 .plantWrapper {
- background-color: forestgreen;
- width: 120%;
+  background-color: forestgreen;
+ width: 100%;
  max-width: 1000px;
  border-radius: 15px 50px;
- margin-bottom: 60px;
+ margin-bottom: 40px;
+ padding: 2%;
 }
 .plantWrapper > p, .plantWrapper > h2 {
   color: white !important;
   padding-left: 30px;
 }
 
+.schedulebutton {
+}
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

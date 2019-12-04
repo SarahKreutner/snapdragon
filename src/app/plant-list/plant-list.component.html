@@ -7,7 +7,7 @@
      <h2> {{ data.given_name | titlecase}} </h2>
      <p>{{data.description}}</p>
      <p> Location: {{data.location}} </p>
-     <button *ngIf="data.plant_schedule_id == null">Add schedule</button>
+     <button id="schedulebutton" *ngIf="data.plant_schedule_id == null">Add schedule</button>
      <p *ngIf="data.plant_schedule_id != null"> Reminder Scheduled </p>
 <!-- <app-plant-alerts
   [plant]="plant"
