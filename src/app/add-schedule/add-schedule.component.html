@@ -1,0 +1,22 @@
+
+<form *ngIf="true" [formGroup]="addPlantForm" (ngSubmit)="onSubmit()">
+		<input type="radio" formControlName="reminderType" name="reminderType" value="Weekly"> Weekly <br>
+    <input type="radio" formControlName="reminderType" name="reminderType" value="Repeated"> Repeating <br>
+		<br>
+    <div class="btn-group">
+  <button class="round" value="Sunday">S</button>
+  <button class="round" value="Monday">M</button>
+  <button class="round" value="Tuesday">T</button>
+  <button class="round" value="Wednesday">W</button>
+  <button class="round" value="Thursday">T</button>
+  <button class="round" value="Friday">F</button>
+  <button class="round" value="Saturday">S</button>
+</div>
+    <label>Every
+		<input type="text"  formControlName="plantDescription" placeholder="number">
+    days
+  </label>
+		
+		<br>
+		<button type="submit">Create</button>
+	</form>
