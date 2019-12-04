@@ -1,7 +1,7 @@
 <form *ngIf="true" [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
-	<input class="inline" type="radio" ng-model="reminderType" formControlName="reminderType" name="reminderType" value="Weekly"> Weekly
+	<input class="inline" type="radio" ng-model="reminderType" formControlName="scheduleType" name="scheduleType" value="Weekly"> Weekly
 	<br>
-	<div ng-show="reminderType == 'Weekly'" class="btn-group">
+	<div ng-show="scheduleType == 'Weekly'" class="btn-group">
 		<input formControlName="day" name="day" type="radio" class="round" value="Sunday">Sunday
 		<input type="radio" class="round" formControlName="day" name="day" type="radio" value="Monday">Monday
 		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Tuesday">Tuesday
@@ -10,9 +10,10 @@
 		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Friday">Friday
 		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Saturday">Saturday
 	</div>
-		<input type="radio" formControlName="reminderType" name="reminderType" value="Repeated"> Repeating <br>
+		<input type="radio" formControlName="scheduleType" name="scheduleType" value="Repeated"> Repeating <br>
 		<label>Every 
-		<input type="text"  formControlName="numberDays" placeholder="number">
+		<input type="text"  formControlName="frequency" name="frequency"
+    placeholder="number">
      days
   </label>
 
