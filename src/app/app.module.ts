@@ -16,13 +16,14 @@ import { SearchComponent } from './search/search.component';
 import { SearchService } from './search.service';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
+    AngularFontAwesomeModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },

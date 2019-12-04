@@ -1,11 +1,18 @@
-<br>
+<head> 
+    <link rel="stylesheet" 
+          href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/font-awesome.min.css"> </head>
+
 
 <app-search></app-search>
 <h2>My Garden</h2>
 
 <div *ngFor="let data of plants; index as given_name">
   <div class=plantWrapper>
-     <h2> {{ data.given_name | titlecase}} </h2>
+    <div class="input-icons"> 
+            
+     <h2> <fa name="cog" animation="spin"></fa> {{ data.given_name | titlecase}} </h2>
+    </div>
      <p>{{data.description}}</p>
      <p> Location: {{data.location}} </p>
      <button id="schedulebutton" *ngIf="data.plant_schedule_id == null">Add schedule</button>
