@@ -1,6 +1,16 @@
+<head> 
+    <link rel="stylesheet" 
+          href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> </head>
+
 <form [formGroup]="searchForm" (input)="onSubmit()">
   <br>
-<input formControlName="searchField" type="text" id="searchField" placeholder="Search for plants..." autofocus/>
+   <div> 
+        <div class="input-icons"> 
+            <i class="fa fa-search icon"></i> 
+<input class="input-field" formControlName="searchField" type="text" id="searchField" placeholder="       Search for plants..." autofocus/>
+        </div></div>
+
 </form>
 <div *ngFor="let data of results; index as formal_name">
 

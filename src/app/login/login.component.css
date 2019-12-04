@@ -7,6 +7,9 @@
 }
 
 button {
-  background-color: rgba(128, 155, 206, 1);
-  color: rgba(11, 57, 84, 1)
+  background-color: rgba(198, 235, 190, 1);
+  color: rgba(11, 57, 84, 1);
+}
+a {
+  color: rgba(11, 57, 84, 1);
 }
