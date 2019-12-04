@@ -13,14 +13,6 @@ p {
 app-top-bar {
   background-color:  rgba(11, 57, 84, 1);
 }
-div.container {
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  top:68px;
-}
-
 
 
 /*

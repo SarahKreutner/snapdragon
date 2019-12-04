@@ -17,6 +17,7 @@ import { SearchService } from './search.service';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     CartComponent,
     ShippingComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    AddScheduleComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, SearchService, ApiService]
