@@ -5,3 +5,6 @@ button.round {
   text-align: center;
   margin: 2px;
 }
+.inline {
+  max-width: 50px !important;
+}
