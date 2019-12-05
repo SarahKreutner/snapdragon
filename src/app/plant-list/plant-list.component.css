@@ -9,8 +9,7 @@
 .plantWrapper {
   background-color: rgba(198, 235, 190, 1);
  width: 100%;
- max-width: 1000px;
- border-radius: 15px 50px;
+ border-radius: 50px 15px ;
  margin-bottom: 40px;
  padding: 2%;
  padding-bottom:4% !important;

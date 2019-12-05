@@ -21,3 +21,17 @@ input {
     padding: 10px; 
     min-width: 40px; 
 } 
+button {
+  background-color: rgba(198, 235, 190, 1);
+  color: rgba(11, 57, 84, 1);
+}
+p {
+  color: rgba(11, 57, 84, 1);
+}
+
+a {
+  background-color: rgba(11, 57, 84, 1);
+  padding: 2%;
+  border-radius: 15px 3px ;
+  color: rgba(224, 255, 79, 1);
+}
