@@ -6,10 +6,31 @@
     --color5: rgba(135, 214, 74, 1);
 }
 
+.schedulebutton {
+  padding: none;
+}
+ .fa-leaf{
+  color: rgba(11, 57, 84, 1) !important;
+  font-weight: 900;
+  padding-right: 8px;
+  font-size: .9em;
+}
+ .fa-home {
+   color: rgba(11, 57, 84, 1) !important;
+   font-style: normal;
+   font-size: 1.1em;
+ }
+i{
+   font-family: 'FontAwesome' !important;
+  }
 button {
   background-color: rgba(198, 235, 190, 1);
   color: rgba(11, 57, 84, 1);
 }
-a {
+a, p, h1, form > label, h2 {
   color: rgba(11, 57, 84, 1);
+}
+
+h1 {
+  margin-bottom: -15px;
 }
