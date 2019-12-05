@@ -12,7 +12,7 @@
      <p>{{data.description}}</p>
      <p> Location: {{data.location}} </p>
      <app-add-schedule *ngIf="data.plant_schedule_id == null" plant=[data.plant_id]></app-add-schedule>
-     <p *ngIf="data.plant_schedule_id != null"> Reminder Scheduled </p>
+     <app-reminder-view *ngIf="data.plant_schedule_id != null"></app-reminder-view>
 	
 <!-- <app-plant-alerts
   [plant]="plant"

@@ -14,7 +14,7 @@
  margin-bottom: 40px;
  padding: 2%;
 }
-.plantWrapper > p, .plantWrapper > h2 {
+.plantWrapper > p, .plantWrapper > h2{
   padding-left: 30px;
   color: rgba(11, 57, 84, 1);
 }

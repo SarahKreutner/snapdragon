@@ -18,6 +18,7 @@ import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
+import { ReminderViewComponent } from './reminder-view/reminder-view.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { AddScheduleComponent } from './add-schedule/add-schedule.component';
     ShippingComponent,
     SearchComponent,
     LoginComponent,
-    AddScheduleComponent
+    AddScheduleComponent,
+    ReminderViewComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, SearchService, ApiService]

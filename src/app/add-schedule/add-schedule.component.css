@@ -8,3 +8,9 @@ button.round {
 .inline {
   max-width: 50px !important;
 }
+.indent {
+  padding-left: 30px !important;
+}
+.indent > input > p {
+  color: rgba(11, 57, 84, 1);
+}

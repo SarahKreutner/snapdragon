@@ -15,6 +15,7 @@ export class AddScheduleComponent implements OnInit {
   frequency;
   date;
   dateString;
+  buttonClicked=false;
   display=true;
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
     this.scheduleForm = this.formBuilder.group({
