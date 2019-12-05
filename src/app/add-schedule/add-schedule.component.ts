@@ -13,6 +13,8 @@ export class AddScheduleComponent implements OnInit {
   scheduleType;
   day;
   frequency;
+  date;
+  dateString;
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
     this.scheduleForm = this.formBuilder.group({
       scheduleType: "",
@@ -27,16 +29,26 @@ export class AddScheduleComponent implements OnInit {
     this.scheduleType = this.scheduleForm.get("scheduleType").value;
     this.day = this.scheduleForm.get("day").value;
     this.frequency = this.scheduleForm.get("frequency").value;
-    console.log(this.scheduleType, this.day, this.frequency);
-
+  
+    this.date = new Date();
+    this.dateString = this.date.getFullYear()+ "-" +this.date.getMonth()+ "-" + this.date.getDate() +" "+ this.date.getHours() +":"+ this.date.getMinutes()+ ":" + this.date.getSeconds();
+    
+    console.log(this.scheduleType, this.day, this.frequency, user, this.dateString);
     if (this.scheduleType == "Repeated") {
       this.http
         .post(database + "/PlantSchedule/createPlantSchedule", {
-          user: { username: user, plantId: 31, }
+          //TODO - fix plant id
+          plant_schedule: {
+            user_id: user,
+            plant_id: 18,
+            plant_schedule_type: this.scheduleType,
+            next_notification: this.dateString,
+            time_for_repeat: this.frequency
+          }
         })
         .subscribe(data => {
-          // console.log(data);
-          // console.warn(data["message"]);
+          console.log(data);
+          console.log(data["message"]);
           // this.message = data["message"];
           // this.nextPage = "[/home]";
           // this.authenticated = data["data"]["authenticated"];
