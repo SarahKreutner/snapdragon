@@ -10,7 +10,7 @@
      <h2>  <i class="fas fa-leaf fa-flip-horizontal"></i> {{ data.given_name | titlecase}} </h2>
     </div>
      <p>{{data.description}}</p>
-     <p> Location: {{data.location}} </p>
+     <p> <i class="fas fa-home"></i> {{data.location}} </p>
      <app-add-schedule *ngIf="data.plant_schedule_id == null" plant=[data.plant_id]></app-add-schedule>
      <app-reminder-view *ngIf="data.plant_schedule_id != null"></app-reminder-view>
 	
