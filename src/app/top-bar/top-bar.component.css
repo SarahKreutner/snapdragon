@@ -13,9 +13,11 @@ a > h1 {
 app-top-bar {
   background-color: rgba(11, 57, 84, 1);
 }
-a > h1 > fa {
+a > h1 > .fa-leaf {
   color: rgba(198, 235, 190, 1) !important;
 }
+
+
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
