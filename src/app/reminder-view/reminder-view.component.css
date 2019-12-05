@@ -1,3 +1,23 @@
+:root {
+    --color1: rgba(11, 57, 84, 1);
+    --color2: rgba(128, 155, 206, 1);
+    --color3: rgba(198, 235, 190, 1);
+    --color4: rgba(224, 255, 79, 1);
+    --color5: rgba(135, 214, 74, 1);
+}
+
 .indent {
   padding-left: 30px !important;
+}
+
+button {
+  background-color: rgba(11, 57, 84, 1);
+  color: rgba(224, 255, 79, 1);
+}
+a, p {
+  color: rgba(11, 57, 84, 1);
+}
+
+p {
+  font-weight: bold;
 }

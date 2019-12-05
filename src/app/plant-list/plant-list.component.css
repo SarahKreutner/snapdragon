@@ -22,12 +22,28 @@
 h2 {
   color: rgba(11, 57, 84, 1);
   font-weight: bold;
+  padding-left: 12px;
 }
 
 .schedulebutton {
   padding: none;
 }
-
+ .fa-leaf {
+  color: rgba(11, 57, 84, 1) !important;
+  font-weight: 900;
+  padding-right: 8px;
+  font-size: .9em;
+}
+i{
+   font-family: 'FontAwesome' !important;
+  }
+button {
+  background-color: rgba(198, 235, 190, 1);
+  color: rgba(11, 57, 84, 1);
+}
+a {
+  color: rgba(11, 57, 84, 1);
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
