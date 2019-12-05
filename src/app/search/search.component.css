@@ -10,6 +10,7 @@ input {
   width: 100%;
   border-color: rgba(224, 255, 79, 1);
   border-width: 5px; 
+  padding-left: 30px;
 }
 
 .input-icons i { 
