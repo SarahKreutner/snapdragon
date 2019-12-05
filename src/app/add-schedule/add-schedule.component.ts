@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { database, user, setUser } from "../constants";
@@ -15,13 +15,16 @@ export class AddScheduleComponent implements OnInit {
   frequency;
   date;
   dateString;
+  display=true;
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
     this.scheduleForm = this.formBuilder.group({
       scheduleType: "",
       day: "",
       frequency: ""
     });
+    
   }
+  @Input() plant: Array<String>;
 
   ngOnInit() {}
 
@@ -29,7 +32,7 @@ export class AddScheduleComponent implements OnInit {
     this.scheduleType = this.scheduleForm.get("scheduleType").value;
     this.day = this.scheduleForm.get("day").value;
     this.frequency = this.scheduleForm.get("frequency").value;
-  
+
     this.date = new Date();
     this.dateString = this.date.getFullYear()+ "-" +this.date.getMonth()+ "-" + this.date.getDate() +" "+ this.date.getHours() +":"+ this.date.getMinutes()+ ":" + this.date.getSeconds();
     
@@ -40,7 +43,7 @@ export class AddScheduleComponent implements OnInit {
           //TODO - fix plant id
           plant_schedule: {
             user_id: user,
-            plant_id: 18,
+            plant_id: this.plant,
             plant_schedule_type: this.scheduleType,
             next_notification: this.dateString,
             time_for_repeat: this.frequency
@@ -49,6 +52,10 @@ export class AddScheduleComponent implements OnInit {
         .subscribe(data => {
           console.log(data);
           console.log(data["message"]);
+          if (data["message"] == ("SUCCESS")) {
+            this.display=false;
+            console.log(this.display);
+          }
           // this.message = data["message"];
           // this.nextPage = "[/home]";
           // this.authenticated = data["data"]["authenticated"];
@@ -57,6 +64,7 @@ export class AddScheduleComponent implements OnInit {
           //   setUser(this.userId);
           // }
         });
+
     }
   }
 }

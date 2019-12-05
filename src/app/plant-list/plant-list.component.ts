@@ -1,6 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
 import { CartService } from '../cart.service';
-import {database, user, color1, color2, color3, color4, color5} from "../constants";
+import {database, user} from "../constants";
 import { HttpClient } from '@angular/common/http';
 
 @Component({

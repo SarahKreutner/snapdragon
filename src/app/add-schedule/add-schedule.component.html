@@ -1,4 +1,5 @@
-<form *ngIf="true" [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
+<div>
+<form *ngIf="display" [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
 	<input class="inline" type="radio" ng-model="reminderType" formControlName="scheduleType" name="scheduleType" value="Weekly"> Weekly
 	<br>
 	<div ng-show="scheduleType == 'Weekly'" class="btn-group">
@@ -19,3 +20,4 @@
 
 		<button type="submit">Schedule reminder</button>
 </form>
+<p *ngIf="!display">Reminder Scheduled</p></div>
