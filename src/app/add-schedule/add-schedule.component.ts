@@ -37,7 +37,7 @@ export class AddScheduleComponent implements OnInit {
     this.date = new Date();
     this.dateString = this.date.getFullYear()+ "-" +this.date.getMonth()+ "-" + this.date.getDate() +" "+ this.date.getHours() +":"+ this.date.getMinutes()+ ":" + this.date.getSeconds();
     
-    console.log(this.scheduleType, this.day, this.frequency, user, this.dateString);
+    console.log(this.scheduleType, this.day, this.frequency, user, this.dateString, this.plant.toString());
     if (this.scheduleType == "Repeated") {
       this.http
         .post(database + "/PlantSchedule/createPlantSchedule", {
