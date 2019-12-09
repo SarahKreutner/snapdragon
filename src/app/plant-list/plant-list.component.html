@@ -12,7 +12,7 @@
      <p>{{data.description}}</p>
      <p> <i class="fas fa-home"></i> {{data.location}} </p>
      <app-add-schedule *ngIf="data.plant_schedule_id == null" [plant_id]="data.plant_id"></app-add-schedule>
-     <app-reminder-view *ngIf="data.plant_schedule_id != null"></app-reminder-view>
+     <app-reminder-view *ngIf="data.plant_schedule_id != null" [plant_id]="data.plant_id"></app-reminder-view>
 	
 <!-- <app-plant-alerts
   [plant]="plant"
