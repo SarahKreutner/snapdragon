@@ -1,6 +1,6 @@
 <div class="indent">
-<p>
+<p *ngIf="days > 0">
 Water in {{days}} days
 </p>
-<button>Water</button>
+<button *ngIf="days<=0" (onClick)=waterPlant()>Water</button>
 </div>

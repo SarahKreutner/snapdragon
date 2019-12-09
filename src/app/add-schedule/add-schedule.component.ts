@@ -28,17 +28,16 @@ export class AddScheduleComponent implements OnInit {
   }
   @Input() plant: Array<String>;
 
-  ngOnInit() {
-  
-  };
+  ngOnInit() {}
 
   onSubmit(): void {
     const sleep = milliseconds => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-    const doSomething = async () => {
-  await sleep(2000)
-  //do stuff
-}
+      return new Promise(resolve => setTimeout(resolve, milliseconds));
+      const doSomething = async () => {
+        await sleep(2000);
+        //do stuff
+      };
+    };
     this.scheduleType = "Repeated";
     this.day = this.scheduleForm.get("day").value;
     this.frequency = this.scheduleForm.get("frequency").value;
@@ -84,8 +83,10 @@ export class AddScheduleComponent implements OnInit {
         console.log(data);
         console.log(data["message"]);
         if (data["message"] == "SUCCESS") {
-          this.display = false;
-          console.log(this.display);
+          sleep(5000).then(() => {
+            this.display = false;
+            console.log(this.display);
+          });
         }
         // this.message = data["message"];
         // this.nextPage = "[/home]";

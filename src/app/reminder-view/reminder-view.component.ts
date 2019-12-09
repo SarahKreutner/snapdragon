@@ -26,7 +26,15 @@ export class ReminderViewComponent implements OnInit {
           data["data"][0]["Next_Notification"]
         );
         console.log(this.plant_id, this.closest_water_date, this.today);
-        this.days = Math.ceil((this.closest_water_date.getTime()-this.today.getTime())/(1000*60*60*24));
+        this.days = Math.ceil(
+          (this.closest_water_date.getTime() - this.today.getTime()) /
+            (1000 * 60 * 60 * 24)
+        );
       });
   }
+
+  waterPlant() {
+    //water the plant here
+  }
+
 }

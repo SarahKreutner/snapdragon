@@ -1,23 +1,21 @@
-
-
 <app-search></app-search>
 <h2>My Garden</h2>
 
 <div *ngFor="let data of plants; index as given_name">
-  <div class=plantWrapper>
-    <div class="input-icons"> 
-            
-     <h2>  <i class="fas fa-leaf fa-flip-horizontal"></i> {{ data.given_name | titlecase}} </h2>
-    </div>
-     <p>{{data.description}}</p>
-     <p> <i class="fas fa-home"></i> {{data.location}} </p>
-     <app-add-schedule *ngIf="data.plant_schedule_id == null" [plant_id]="data.plant_id"></app-add-schedule>
-     <app-reminder-view *ngIf="data.plant_schedule_id != null" [plant_id]="data.plant_id"></app-reminder-view>
-	
-<!-- <app-plant-alerts
+	<div class=plantWrapper>
+		<div class="input-icons">
+
+			<h2> <i class="fas fa-leaf fa-flip-horizontal"></i> {{ data.given_name | titlecase}} </h2>
+		</div>
+		<p>{{data.description}}</p>
+		<p> <i class="fas fa-home"></i> {{data.location}} </p>
+		<app-add-schedule *ngIf="data.plant_schedule_id == null" [plant_id]="data.plant_id"></app-add-schedule>
+		<app-reminder-view *ngIf="data.plant_schedule_id != null" [plant_id]="data.plant_id" ></app-reminder-view>
+
+		<!-- <app-plant-alerts
   [plant]="plant"
   (notify)="onNotify()"></app-plant-alerts> -->
-  </div>
+	</div>
 </div>
 
 <!-- <div *ngFor="let plant of plants; index as plantId">
