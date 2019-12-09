@@ -9,16 +9,20 @@ import {database} from "../constants";
 })
 export class ReminderViewComponent implements OnInit {
   @Input() plant_id;
-  today;
   closest_water_date;
   next_water_date;
   days;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.today = Date.now;
-    this.http.post(database + "/PlantSchedule/GetNotificationStatus", {plant:{plant_id: this.plant_id}}).subscribe( data => {console.log(data["data"]); this.closest_water_date = data["data"][0]["Next_Notification"]; console.log(this.plant_id, this.today, this.closest_water_date);});
+
+    this.http.post(database + "/PlantSchedule/GetNotificationStatus", {plant:{plant_id: this.plant_id}}).subscribe( data => {console.log(data["data"]); this.closest_water_date = new Date(data["data"][0]["Next_Notification"]); console.log(this.plant_id, this.closest_water_date);
+    this.days = new Date(new Date().getTime() - this.closest_water_date.getTime()).getDay();
     
+    
+    });
+    
+
     
     
   }
