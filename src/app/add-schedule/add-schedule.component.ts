@@ -31,7 +31,7 @@ export class AddScheduleComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(): void {
-    this.scheduleType = this.scheduleForm.get("scheduleType").value;
+    this.scheduleType = "Repeated";
     this.day = this.scheduleForm.get("day").value;
     this.frequency = this.scheduleForm.get("frequency").value;
 
@@ -39,7 +39,6 @@ export class AddScheduleComponent implements OnInit {
     this.dateString = this.date.getFullYear()+ "-" +this.date.getMonth()+ "-" + this.date.getDate() +" "+ this.date.getHours() +":"+ this.date.getMinutes()+ ":" + this.date.getSeconds();
     
     console.log(this.scheduleType, this.day, this.frequency, user, this.dateString, this.plant_id);
-    if (this.scheduleType == "Repeated") {
       this.http
         .post(database + "/PlantSchedule/createPlantSchedule", {
           //TODO - fix plant id
@@ -69,4 +68,4 @@ export class AddScheduleComponent implements OnInit {
 
     }
   }
-}
+

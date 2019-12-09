@@ -1,18 +1,7 @@
 <div class="indent">
 <button name="showForm" *ngIf="display && !buttonClicked" (click)="buttonClicked=true">Schedule Reminder</button>
 <form *ngIf="display && buttonClicked" [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
-	<input class="inline" type="radio" ng-model="reminderType" formControlName="scheduleType" name="scheduleType" value="Weekly"> Weekly
-	<br>
-	<div ng-show="scheduleType == 'Weekly'" class="btn-group">
-		<input formControlName="day" name="day" type="radio" class="round" value="Sunday">Sunday
-		<input type="radio" class="round" formControlName="day" name="day" type="radio" value="Monday">Monday
-		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Tuesday">Tuesday
-		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Wednesday">Wednesday
-		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Thursday">Thursday
-		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Friday">Friday
-		<input type="radio" class="round" formControlName="day" name="day" type="radio"value="Saturday">Saturday
-	</div>
-		<input type="radio" formControlName="scheduleType" name="scheduleType" value="Repeated"> Repeating <br>
+  <h2>Schedule Reminder </h2>
 		<label>Every 
 		<input type="text"  formControlName="frequency" name="frequency"
     placeholder="number">
