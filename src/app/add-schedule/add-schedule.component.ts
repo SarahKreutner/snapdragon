@@ -9,6 +9,7 @@ import { database, user, setUser } from "../constants";
   styleUrls: ["./add-schedule.component.css"]
 })
 export class AddScheduleComponent implements OnInit {
+  @Input() plant_id;
   scheduleForm;
   scheduleType;
   day;
