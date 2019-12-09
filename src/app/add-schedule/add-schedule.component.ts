@@ -16,15 +16,14 @@ export class AddScheduleComponent implements OnInit {
   frequency;
   date;
   dateString;
-  buttonClicked=false;
-  display=true;
+  buttonClicked = false;
+  display = true;
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
     this.scheduleForm = this.formBuilder.group({
       scheduleType: "",
       day: "",
       frequency: ""
     });
-    
   }
   @Input() plant: Array<String>;
 
@@ -36,36 +35,54 @@ export class AddScheduleComponent implements OnInit {
     this.frequency = this.scheduleForm.get("frequency").value;
 
     this.date = new Date();
-    this.dateString = this.date.getFullYear()+ "-" +this.date.getMonth()+ "-" + this.date.getDate() +" "+ this.date.getHours() +":"+ this.date.getMinutes()+ ":" + this.date.getSeconds();
+
+    this.dateString =
+      this.date.getFullYear() +
+      "-" +
+      (this.date.getMonth()+1)  +
+      "-" +
+      this.date.getDate() +
+      " " +
+      this.date.getHours() +
+      ":" +
+      this.date.getMinutes() +
+      ":" +
+      this.date.getSeconds();
     
-    console.log(this.scheduleType, this.day, this.frequency, user, this.dateString, this.plant_id);
-      this.http
-        .post(database + "/PlantSchedule/createPlantSchedule", {
-          //TODO - fix plant id
-          plant_schedule: {
-            user_id: user,
-            plant_id: this.plant_id,
-            plant_schedule_type: this.scheduleType,
-            next_notification: this.dateString,
-            time_for_repeat: this.frequency
-          }
-        })
-        .subscribe(data => {
-          console.log(data);
-          console.log(data["message"]);
-          if (data["message"] == ("SUCCESS")) {
-            this.display=false;
-            console.log(this.display);
-          }
-          // this.message = data["message"];
-          // this.nextPage = "[/home]";
-          // this.authenticated = data["data"]["authenticated"];
-          // if (this.authenticated) {
-          //   this.userId = data["data"]["results"][0]["user_id"];
-          //   setUser(this.userId);
-          // }
-        });
-
-    }
+    console.log(
+      "Date: ", this.date, this.dateString,
+      this.scheduleType,
+      this.day,
+      this.frequency,
+      user,
+      this.dateString,
+      this.plant_id
+    );
+    this.http
+      .post(database + "/PlantSchedule/createPlantSchedule", {
+        //TODO - fix plant id
+        plant_schedule: {
+          user_id: user,
+          plant_id: this.plant_id,
+          plant_schedule_type: this.scheduleType,
+          next_notification: this.dateString,
+          time_for_repeat: this.frequency
+        }
+      })
+      .subscribe(data => {
+        console.log(data);
+        console.log(data["message"]);
+        if (data["message"] == "SUCCESS") {
+          this.display = false;
+          console.log(this.display);
+        }
+        // this.message = data["message"];
+        // this.nextPage = "[/home]";
+        // this.authenticated = data["data"]["authenticated"];
+        // if (this.authenticated) {
+        //   this.userId = data["data"]["results"][0]["user_id"];
+        //   setUser(this.userId);
+        // }
+      });
   }
-
+}
