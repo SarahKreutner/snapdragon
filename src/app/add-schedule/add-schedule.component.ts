@@ -15,6 +15,7 @@ export class AddScheduleComponent implements OnInit {
   day;
   frequency;
   date;
+
   dateString;
   buttonClicked = false;
   display = true;
@@ -27,9 +28,17 @@ export class AddScheduleComponent implements OnInit {
   }
   @Input() plant: Array<String>;
 
-  ngOnInit() {}
+  ngOnInit() {
+  
+  };
 
   onSubmit(): void {
+    const sleep = milliseconds => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+    const doSomething = async () => {
+  await sleep(2000)
+  //do stuff
+}
     this.scheduleType = "Repeated";
     this.day = this.scheduleForm.get("day").value;
     this.frequency = this.scheduleForm.get("frequency").value;
@@ -39,7 +48,7 @@ export class AddScheduleComponent implements OnInit {
     this.dateString =
       this.date.getFullYear() +
       "-" +
-      (this.date.getMonth()+1)  +
+      (this.date.getMonth() + 1) +
       "-" +
       this.date.getDate() +
       " " +
@@ -48,9 +57,11 @@ export class AddScheduleComponent implements OnInit {
       this.date.getMinutes() +
       ":" +
       this.date.getSeconds();
-    
+
     console.log(
-      "Date: ", this.date, this.dateString,
+      "Date: ",
+      this.date,
+      this.dateString,
       this.scheduleType,
       this.day,
       this.frequency,
