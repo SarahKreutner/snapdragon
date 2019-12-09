@@ -37,9 +37,6 @@ export class plantDetailsComponent implements OnInit {
     });
   }
 
-  addToCart(plant) {
-    this.cartService.addToCart(plant);
-  }
   add(plant) {
     this.showInput = true;
   }
