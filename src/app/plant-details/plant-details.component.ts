@@ -59,7 +59,6 @@ export class plantDetailsComponent implements OnInit {
   onSubmit(): void {
     this.plantName = this.addPlantForm.get("plantName").value;
     this.plantDescription = this.addPlantForm.get("plantDescription").value;
-    this.notifications = this.addPlantForm.get("notifications").value;
     this.location = this.addPlantForm.get("location").value;
     console.log("Creating Plant");
     this.http
