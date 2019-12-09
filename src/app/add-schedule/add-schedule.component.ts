@@ -38,14 +38,14 @@ export class AddScheduleComponent implements OnInit {
     this.date = new Date();
     this.dateString = this.date.getFullYear()+ "-" +this.date.getMonth()+ "-" + this.date.getDate() +" "+ this.date.getHours() +":"+ this.date.getMinutes()+ ":" + this.date.getSeconds();
     
-    console.log(this.scheduleType, this.day, this.frequency, user, this.dateString, this.plant.toString());
+    console.log(this.scheduleType, this.day, this.frequency, user, this.dateString, this.plant_id);
     if (this.scheduleType == "Repeated") {
       this.http
         .post(database + "/PlantSchedule/createPlantSchedule", {
           //TODO - fix plant id
           plant_schedule: {
             user_id: user,
-            plant_id: this.plant,
+            plant_id: this.plant_id,
             plant_schedule_type: this.scheduleType,
             next_notification: this.dateString,
             time_for_repeat: this.frequency
