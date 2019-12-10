@@ -21,6 +21,7 @@ export class plantListComponent implements OnInit{
   }
 
   deletePlant(plant_id) {
+    console.log("Plant deleted", plant_id)
      this.http.post(database + "/Plants/Delete", {plant:{plant_id: plant_id, user_id: user,}}).subscribe( data => {console.log(data["data"]); this.plants = data["data"];});
   }
 }
