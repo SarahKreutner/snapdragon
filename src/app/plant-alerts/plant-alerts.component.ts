@@ -20,7 +20,7 @@ export class plantAlertsComponent implements OnInit{
     //console.log(user);
     setInterval(() => {
       this.getNotifications(); 
-    }, 1000);
+    }, 60000);
   }
   
   getNotifications() {
