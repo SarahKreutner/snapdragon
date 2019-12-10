@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ApiService } from './search/api.service';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { plantListComponent } from './plant-list/plant-list.component';
@@ -48,7 +47,7 @@ import { ReminderViewComponent } from './reminder-view/reminder-view.component';
     ReminderViewComponent
   ],
   bootstrap: [ AppComponent ],
-  providers: [CartService, SearchService, ApiService]
+  providers: [CartService, SearchService]
 })
 export class AppModule { }
 
