@@ -22,6 +22,9 @@ export class plantAlertsComponent implements OnInit{
       this.getNotifications(); 
     }, 60000);
   }
+  onNotify() {
+    window.alert('You will be notified when the plant goes on sale');
+  }
   
   getNotifications() {
     //console.log("Checking Notifications");

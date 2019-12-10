@@ -12,9 +12,7 @@ export class plantListComponent implements OnInit{
   plants;
    constructor(private http: HttpClient, private cartService: CartService) { }
 
-  onNotify() {
-    window.alert('You will be notified when the plant goes on sale');
-  }
+  
   
   ngOnInit() {
     console.log("Loading plants");
