@@ -19,6 +19,10 @@ export class plantListComponent implements OnInit{
     this.http.post(database + "/Users/Plants", {user:{user_id: user,}}).subscribe( data => {console.log(data["data"]); this.plants = data["data"];});
     
   }
+
+  deletePlant(plant_id) {
+     this.http.post(database + "/Plants/Delete", {plant:{plant_id: plant_id, user_id: user,}}).subscribe( data => {console.log(data["data"]); this.plants = data["data"];});
+  }
 }
 
 
