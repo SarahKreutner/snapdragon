@@ -24,10 +24,13 @@ h2 {
   font-weight: bold;
   padding-left: 12px;
 }
+.short {
+  margin-bottom: -15px;
+}
 .fa-trash {
   position: relative;
-  top: 0 !important;
-  right: 0;
+  top: -10px;
+  right: -90%;
 }
 .schedulebutton {
   padding: none;
