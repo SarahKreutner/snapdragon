@@ -20,23 +20,29 @@ export class plantAlertsComponent implements OnInit{
     //console.log(user);
     setInterval(() => {
       this.getNotifications(); 
-    }, 60000);
+    }, 30000);
   }
-  onNotify() {
-    window.alert('You will be notified when the plant goes on sale');
+  onNotify(plant_name) {
+    window.alert('Your plant '+plant_name+' needs to be watered!');
   }
   
-  getNotifications() {
+    getNotifications() {
     //console.log("Checking Notifications");
     this.http.post(database + "/PlantSchedule/getNotifications", {user:{user_id: user,}}).subscribe( data => {
       console.log(data["data"]); 
       this.plants = data["data"];
-      // for(let plant_notification of this.plants) {
-      //   if(plant_notification) {
-      //     console.log("hello")
-      //   }
-      // }
+      for(let plant_notification of this.plants) {
+        let water_date = new Date(
+          plant_notification[1]
+        );
+        let now = new Date();
+        if(water_date < now) {
+          console.log(plant_notification[5]);
+          this.onNotify(plant_notification[5]);
+        }
+      }
     });
   }
+
 
 }
