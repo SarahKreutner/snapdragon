@@ -6,6 +6,7 @@
 		<div class="input-icons">
 
 			<h2> <i class="fas fa-leaf fa-flip-horizontal"></i> {{ data.given_name | titlecase}} </h2>
+      <i class="fas fa-trash"></i>
 		</div>
 		<p>{{data.description}}</p>
 		<p> <i class="fas fa-home"></i> {{data.location}} </p>
@@ -18,29 +19,6 @@
 	</div>
 </div>
 
-<!-- <div *ngFor="let plant of plants; index as plantId">
-   <h3>
-      <a [title]="plant.name + ' details'" [routerLink]="['/plants', plantId]">
-      {{ plant.name }}
-    </a>
-  </h3>
-   <p *ngIf="plant.description">
-    Description: {{ plant.description }}
-  </p>
-  <p *ngIf="plant.inList == 'true'">
-    In your list
-  </p>
-  <p>
-    ${{plant.price}}
-  </p>
- 
-
-  <app-plant-alerts
-  [plant]="plant"
-  (notify)="onNotify()">
-</app-plant-alerts>
-
-</div> -->
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

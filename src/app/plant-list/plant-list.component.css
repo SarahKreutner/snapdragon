@@ -28,11 +28,12 @@ h2 {
 .schedulebutton {
   padding: none;
 }
- .fa-leaf{
+ .fa-leaf, .fa-trash{
   color: rgba(11, 57, 84, 1) !important;
   font-weight: 900;
   padding-right: 8px;
   font-size: .9em;
+  font-style: normal;
 }
  .fa-home {
    color: rgba(11, 57, 84, 1) !important;
