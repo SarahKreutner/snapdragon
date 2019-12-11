@@ -20,7 +20,7 @@ export class plantAlertsComponent implements OnInit{
     //console.log(user);
     setInterval(() => {
       this.getNotifications(); 
-    }, 600000);
+    }, 6000000);
   }
   onNotify(plant_name) {
     window.alert('Your plant '+plant_name+' needs to be watered!');
