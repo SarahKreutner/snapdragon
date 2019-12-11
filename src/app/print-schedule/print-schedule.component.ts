@@ -12,7 +12,7 @@ export class PrintScheduleComponent implements OnInit {
   constructor(private http: HttpClient,) { }
 
   ngOnInit() {
-    this.http.post(database + "/Users/Plants", {user:{user_id: user,}}).subscribe( data => {console.log(data["data"]); this.plants = data["data"];});
+    this.http.post(database + "/PlantSchedule", {user:{user_id: user,}}).subscribe( data => {console.log(data["data"]); this.plants = data["data"];});
   }
 
 }
