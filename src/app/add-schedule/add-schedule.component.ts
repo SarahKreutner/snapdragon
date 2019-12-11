@@ -31,13 +31,7 @@ export class AddScheduleComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(): void {
-    const sleep = milliseconds => {
-      return new Promise(resolve => setTimeout(resolve, milliseconds));
-      const doSomething = async () => {
-        await sleep(2000);
-        //do stuff
-      };
-    };
+    
     this.scheduleType = "Repeated";
     this.day = this.scheduleForm.get("day").value;
     this.frequency = this.scheduleForm.get("frequency").value;
@@ -82,13 +76,7 @@ export class AddScheduleComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         console.log(data["message"]);
-        if (data["message"] == "SUCCESS") {
-          sleep(5000).then(() => {
-            this.display = false;
-            console.log(this.display);
-          });
-        }
-        plant-list.loadPlants();
+      this.display=false;
         // this.message = data["message"];
         // this.nextPage = "[/home]";
         // this.authenticated = data["data"]["authenticated"];

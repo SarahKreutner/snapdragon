@@ -15,6 +15,10 @@ export class ReminderViewComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    const sleep = milliseconds => {
+      return new Promise(resolve => setTimeout(resolve, milliseconds));
+    };
+     sleep(500).then(() => {
     this.today = new Date();
     this.http
       .post(database + "/PlantSchedule/GetNotificationStatus", {
@@ -31,6 +35,7 @@ export class ReminderViewComponent implements OnInit {
             (1000 * 60 * 60 * 24)
         );
       });
+    });
   }
 
   waterPlant() {
