@@ -76,7 +76,7 @@ export class AddScheduleComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         console.log(data["message"]);
-      this.display=false;
+     
         // this.message = data["message"];
         // this.nextPage = "[/home]";
         // this.authenticated = data["data"]["authenticated"];
@@ -84,6 +84,8 @@ export class AddScheduleComponent implements OnInit {
         //   this.userId = data["data"]["results"][0]["user_id"];
         //   setUser(this.userId);
         // }
+        location.reload();
+        this.display=false;
       });
   }
 }
