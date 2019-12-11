@@ -36,6 +36,8 @@ export class ReminderViewComponent implements OnInit {
         );
       });
     });
+
+    
   }
 
   waterPlant() {
