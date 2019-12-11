@@ -88,6 +88,7 @@ export class AddScheduleComponent implements OnInit {
             console.log(this.display);
           });
         }
+        plant-list.loadPlants();
         // this.message = data["message"];
         // this.nextPage = "[/home]";
         // this.authenticated = data["data"]["authenticated"];
