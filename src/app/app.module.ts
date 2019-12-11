@@ -32,6 +32,7 @@ import { PrintScheduleComponent } from './print-schedule/print-schedule.componen
        { path: 'plants/:plantId', component: plantDetailsComponent },
        { path: 'cart', component: CartComponent },
        { path: 'shipping', component: ShippingComponent },
+       {path: 'print', component: PrintScheduleComponent }
     ])
   ],
   declarations: [
