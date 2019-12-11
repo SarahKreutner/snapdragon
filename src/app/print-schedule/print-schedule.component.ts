@@ -8,10 +8,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./print-schedule.component.css']
 })
 export class PrintScheduleComponent implements OnInit {
-
-  constructor() { }
+  plants;
+  constructor(private http: HttpClient,) { }
 
   ngOnInit() {
+    this.http.post(database + "/Users/Plants", {user:{user_id: user,}}).subscribe( data => {console.log(data["data"]); this.plants = data["data"];});
   }
 
 }
