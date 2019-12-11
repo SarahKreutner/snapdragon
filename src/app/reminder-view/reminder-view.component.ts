@@ -29,13 +29,14 @@ export class ReminderViewComponent implements OnInit {
         plant: { plant_id: this.plant_id }
       })
       .subscribe(data => {
-        console.log(data["data"]);
+        console.log(data["data"], "The Plant Id Is", this.plant_id);
         this.closest_water_date = new Date(data["data"][0]["Next_Notification"]);
         console.log(this.plant_id, this.closest_water_date, this.today);
         this.days = Math.ceil(
           (this.closest_water_date.getTime() - this.today.getTime()) /
             (1000 * 60 * 60 * 24)
         );
+        console.log(this.days);
       });
   }
 
@@ -45,8 +46,8 @@ export class ReminderViewComponent implements OnInit {
         plant: { plant_id: this.plant_id }
       })
       .subscribe(data => {
-        console.log(data["data"]);
-        this.loadWaterDate();
+        console.log(data["data"], "the plant id is", this.plant_id);
+        location.reload();
       });
   }
 }
