@@ -29,7 +29,7 @@ export class plantAlertsComponent implements OnInit{
     getNotifications() {
     //console.log("Checking Notifications");
     this.http.post(database + "/PlantSchedule/getNotifications", {user:{user_id: user,}}).subscribe( data => {
-      console.log(data["data"]); 
+      console.log("Checking for notifications", data["data"]); 
       this.plants = data["data"];
       for(let plant_notification of this.plants) {
         let water_date = new Date(
