@@ -19,7 +19,11 @@ export class ReminderViewComponent implements OnInit {
       return new Promise(resolve => setTimeout(resolve, milliseconds));
     };
     //  sleep(500).then(() => {
-    this.today = new Date();
+    // });
+    this.loadWaterDate();
+  }
+  loadWaterDate() {
+     this.today = new Date();
     this.http
       .post(database + "/PlantSchedule/GetNotificationStatus", {
         plant: { plant_id: this.plant_id }
@@ -35,13 +39,17 @@ export class ReminderViewComponent implements OnInit {
             (1000 * 60 * 60 * 24)
         );
       });
-    // });
-
-    
   }
 
   waterPlant() {
-    //water the plant here
+    this.http
+      .post(database + "/PlantSchedule/waterPlant", {
+        plant: { plant_id: this.plant_id }
+      })
+      .subscribe(data => {
+        console.log(data["data"]);
+      });
+      this.loadWaterDate();
   }
-
+  
 }
