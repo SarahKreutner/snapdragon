@@ -4,7 +4,7 @@
 	<div class=plantWrapper>
 			<h2 class="short"> {{ data.given_name | titlecase}} </h2>
 		<p> {{data.location}} </p>
-    <p>Water on {{data.next_water_date}} and every {{data.interval}} days after that</p>
+    <p>Water on {{data.Next_Watering_Date | date: 'dd/MM/yyyy'}} and every {{data.Days_Between}} days after that</p>
 
 
 	</div>
