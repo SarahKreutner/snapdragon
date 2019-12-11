@@ -17,6 +17,7 @@ import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
 import { AddScheduleComponent } from './add-schedule/add-schedule.component';
 import { ReminderViewComponent } from './reminder-view/reminder-view.component';
+import { PrintScheduleComponent } from './print-schedule/print-schedule.component';
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { ReminderViewComponent } from './reminder-view/reminder-view.component';
     SearchComponent,
     LoginComponent,
     AddScheduleComponent,
-    ReminderViewComponent
+    ReminderViewComponent,
+    PrintScheduleComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, SearchService]
