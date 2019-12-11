@@ -48,8 +48,9 @@ export class ReminderViewComponent implements OnInit {
       })
       .subscribe(data => {
         console.log(data["data"]);
+        this.loadWaterDate();
       });
-      this.loadWaterDate();
+      
   }
   
 }
