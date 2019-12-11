@@ -14,13 +14,17 @@ export class plantAlertsComponent implements OnInit{
   @Input() plant;
   @Output() notify = new EventEmitter();
   plants;
+  flag;
 
   ngOnInit(){
+    if(!this.flag){
     console.log("Creating Notification Subscriber");
     //console.log(user);
     setInterval(() => {
       this.getNotifications(); 
-    }, 6000000);
+    }, 60000);
+    this.flag = true;
+    }
   }
   onNotify(plant_name) {
     window.alert('Your plant '+plant_name+' needs to be watered!');
